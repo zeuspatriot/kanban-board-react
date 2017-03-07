@@ -12,7 +12,7 @@ class Column extends Component{
     }
     createCard(event){
         event.preventDefault();
-        let nextId = this.props.cards.length + 1;
+        let nextId = this.props.idIncrement;
         this.props.createCard({title: event.target.title.value, id: nextId, content: event.target.content.value, column: this.props.name});
         event.target.reset();
         this.toggleNewCard();

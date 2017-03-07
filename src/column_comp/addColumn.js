@@ -7,7 +7,6 @@ class AddColumn extends Component {
     }
     addColumn(e){
         e.preventDefault();
-        console.log(e.target.newColumn.value);
         this.props.addColumn(e.target.newColumn.value);
     }
 

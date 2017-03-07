@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+        idIncr: 3,
         cards: [{title: 'First column', id: 1, content: 'Some fresh preset content', column:'first'},{title: 'Second column', id: 2, content: 'Some fresh preset content', column:'second'}],
         columns:["first", "second"]
     };
@@ -18,8 +19,10 @@ class App extends Component {
   }
   createCard(card){
       this.setState(prevState => ({
-          cards: prevState.cards.concat(card)
+          cards: prevState.cards.concat(card),
+          idIncr: prevState.idIncr + 1
       }));
+
   }
   addColumn(colName){
       console.log("AppFunc Called with: ", colName);
@@ -71,7 +74,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
           {this.state.columns.map((columnName)=>{
-            return <Column key={columnName.index} name={columnName} cards={this.state.cards} createCard={this.createCard} moveLeft={this.moveCardLeft} moveRight={this.moveCardRight}/>})
+            return <Column key={columnName.index} idIncrement={this.state.idIncr} name={columnName} cards={this.state.cards} createCard={this.createCard} moveLeft={this.moveCardLeft} moveRight={this.moveCardRight}/>})
           }
           <AddColumn addColumn={this.addColumn}/>
       </div>
