@@ -12,8 +12,7 @@ class Column extends Component{
     }
     createCard(event){
         event.preventDefault();
-        let nextId = this.props.idIncrement;
-        this.props.createCard({title: event.target.title.value, id: nextId, content: event.target.content.value, column: this.props.name});
+        this.props.createCard({title: event.target.title.value, content: event.target.content.value, column: this.props.name});
         event.target.reset();
         this.toggleNewCard();
     }
@@ -49,7 +48,7 @@ class Column extends Component{
                 {this.props.cards.filter((card) => {
                     return card.column === this.props.name;
                 }).map((card) => {
-                    return <Card key={card.index} id={card.id} title={card.title} content={card.content} moveLeft={this.props.moveLeft} moveRight={this.props.moveRight}/>
+                    return <Card key={card.id} id={card.id} title={card.title} content={card.content} moveLeft={this.props.moveLeft} moveRight={this.props.moveRight}/>
                 })}
             </div>
         )

@@ -7,7 +7,11 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "react-scripts": "0.9.3"
+    "babel-cli": "^6.23.0",
+    "firebase": "^3.7.0",
+    "react": "^15.4.2",
+    "react-scripts": "0.9.3",
+    "reactfire": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
